@@ -6,30 +6,67 @@ export default function ReservationPage() {
             <section className="py-16">
                 <div className="max-w-6xl mx-auto px-4">
                     <h1 className="text-4xl md:text-5xl font-bold text-[#2C1810] mb-8">Rezervace</h1>
-
                     {/* Steps */}
                     <div className="mb-12">
-                        <div className="flex items-center justify-between max-w-3xl mx-auto">
-                            {[
-                                { step: 1, name: 'Výběr vozu' },
-                                { step: 2, name: 'Termín' },
-                                { step: 3, name: 'Osobní údaje' }
-                            ].map((item, index) => (
-                                <div key={item.step} className="flex items-center">
-                                    <div className="flex flex-col items-center">
-                                        <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold ${item.step === 1
-                                                ? 'bg-[#8B4513] text-white'
-                                                : 'bg-[#8B4513]/10 text-[#8B4513]'
-                                            }`}>
-                                            {item.step}
+                        <div className="relative max-w-3xl mx-auto">
+                            {/* Steps with connecting lines */}
+                            <div className="flex flex-col md:flex-row items-start md:items-center justify-between relative">
+                                {[
+                                    { step: 1, name: 'Výběr vozu', status: 'current' },
+                                    { step: 2, name: 'Termín', status: 'upcoming' },
+                                    { step: 3, name: 'Osobní údaje', status: 'upcoming' }
+                                ].map((item, index) => (
+                                    <div key={item.step} className="flex items-center md:flex-col">
+                                        <div className="flex items-center">
+                                            {/* Connecting line before step (except first) */}
+                                            {index > 0 && (
+                                                <>
+                                                    {/* Mobile vertical line */}
+                                                    <div className="h-14 w-0.5 bg-[#8B4513]/10 md:hidden mr-8">
+                                                        {index === 1 && <div className="h-1/2 bg-[#8B4513] transition-all duration-500" />}
+                                                    </div>
+                                                    {/* Desktop horizontal line */}
+                                                    <div className="hidden md:block w-72 h-0.5 bg-[#8B4513]/10 mx-4 mb-4">
+                                                        {index === 1 && <div className="w-full h-full bg-[#8B4513] transition-all duration-500" />}
+                                                    </div>
+                                                </>
+                                            )}
+
+                                            <div className="flex flex-col items-center">
+                                                <div className={`
+                                                    w-10 h-10 rounded-full flex items-center justify-center font-bold
+                                                    transition-all duration-300 relative z-10
+                                                    ${item.status === 'current'
+                                                        ? 'bg-[#8B4513] text-white ring-4 ring-[#8B4513]/20 transform scale-110'
+                                                        : item.status === 'completed'
+                                                            ? 'bg-[#8B4513] text-white'
+                                                            : 'bg-white border-2 border-[#8B4513]/20 text-[#8B4513]'
+                                                    }
+                                                `}>
+                                                    {item.status === 'completed' ? (
+                                                        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                                        </svg>
+                                                    ) : (
+                                                        item.step
+                                                    )}
+                                                </div>
+                                                <span className={`
+                                                    mt-2 text-sm font-medium whitespace-nowrap
+                                                    ${item.status === 'current'
+                                                        ? 'text-[#2C1810]'
+                                                        : item.status === 'completed'
+                                                            ? 'text-[#2C1810]'
+                                                            : 'text-[#4A2F24]/60'
+                                                    }
+                                                `}>
+                                                    {item.name}
+                                                </span>
+                                            </div>
                                         </div>
-                                        <div className="text-sm mt-2 font-medium text-[#2C1810]">{item.name}</div>
                                     </div>
-                                    {index < 2 && (
-                                        <div className="w-24 md:w-32 h-0.5 mx-4 bg-[#8B4513]/10"></div>
-                                    )}
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
                     </div>
 

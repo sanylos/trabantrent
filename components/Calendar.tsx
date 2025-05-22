@@ -85,12 +85,11 @@ export function Calendar() {
 
     const previousMonth = () => {
         setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() - 1));
-    };
-
-    return (
-        <div className="rounded-lg overflow-hidden bg-white shadow-xl">            {/* Calendar Header */}
+    };    return (
+        <div className="rounded-lg overflow-hidden bg-white shadow-xl">
+            {/* Calendar Header */}
             <div className="p-4 bg-[#2C1810] text-white">
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between gap-4">
                     <button
                         onClick={previousMonth}
                         aria-label="Předchozí měsíc"
@@ -99,12 +98,14 @@ export function Calendar() {
                         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                         </svg>
-                    </button>                    <h3 className="text-xl font-bold tracking-tight text-white">
+                    </button>
+                    <h3 className="text-xl font-bold tracking-tight text-white flex-1 text-center">
                         {months[currentDate.getMonth()]} {currentDate.getFullYear()}
-                    </h3><button
+                    </h3>
+                    <button
                         onClick={nextMonth}
                         aria-label="Další měsíc"
-                        className="p-2 hover:bg-white/10 rounded-lg transition-colors font-medium"
+                        className="p-2 hover:bg-white/10 rounded-lg transition-colors"
                     >
                         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -122,22 +123,18 @@ export function Calendar() {
                             {day}
                         </div>
                     ))}
-                </div>
-
-                {/* Days */}                <div className="grid grid-cols-7 gap-2">
+                </div>                {/* Days */}
+                <div className="grid grid-cols-7 gap-2">
                     {days.map((day, index) => (
                         <div
                             key={index}
-                            className={`
-                                aspect-square flex items-center justify-center rounded-lg text-sm font-medium
-                                transition-all duration-200 
-                                ${day.isCurrentMonth
+                            className={`aspect-square flex items-center justify-center rounded-lg text-sm font-medium transition-all duration-200 ${
+                                day.isCurrentMonth
                                     ? day.isAvailable
                                         ? 'bg-[#8B4513]/10 text-[#2C1810] cursor-pointer hover:bg-[#8B4513]/20 hover:scale-105 hover:font-bold'
                                         : 'bg-red-100 text-red-600 cursor-not-allowed'
                                     : 'bg-white/80 text-[#4A2F24]/40'
-                                }
-                            `}
+                            }`}
                         >
                             {day.date}
                         </div>
