@@ -32,10 +32,10 @@ export function Calendar() {
         const days: Day[] = [];
         const month = currentDate.getMonth();
         const year = currentDate.getFullYear();
-        
+
         const daysInMonth = getDaysInMonth(month, year);
         const firstDayOfMonth = getFirstDayOfMonth(month, year);
-        
+
         // Previous month days
         const daysInPreviousMonth = getDaysInMonth(month - 1, year);
         for (let i = firstDayOfMonth - 1; i >= 0; i--) {
@@ -46,7 +46,7 @@ export function Calendar() {
                 isCurrentMonth: false
             });
         }
-        
+
         // Current month days
         for (let i = 1; i <= daysInMonth; i++) {
             const date = new Date(year, month, i);
@@ -58,7 +58,7 @@ export function Calendar() {
                 isAvailable: checkAvailability(date)
             });
         }
-        
+
         // Next month days
         const remainingDays = 42 - days.length; // 6 rows × 7 days = 42
         for (let i = 1; i <= remainingDays; i++) {
@@ -69,7 +69,7 @@ export function Calendar() {
                 isCurrentMonth: false
             });
         }
-        
+
         return days;
     };
 
@@ -99,10 +99,9 @@ export function Calendar() {
                         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                         </svg>
-                    </button>
-                    <h3 className="text-xl font-semibold">
+                    </button>                    <h3 className="text-xl font-bold tracking-tight">
                         {months[currentDate.getMonth()]} {currentDate.getFullYear()}
-                    </h3>                    <button
+                    </h3><button
                         onClick={nextMonth}
                         aria-label="Další měsíc"
                         className="p-2 hover:bg-white/10 rounded-lg transition-colors font-medium"
@@ -133,7 +132,7 @@ export function Calendar() {
                                 aspect-square flex items-center justify-center rounded-lg text-sm font-medium
                                 transition-all duration-200 
                                 ${day.isCurrentMonth
-                                    ? day.isAvailable 
+                                    ? day.isAvailable
                                         ? 'bg-[#8B4513]/10 text-[#2C1810] cursor-pointer hover:bg-[#8B4513]/20 hover:scale-105 hover:font-bold'
                                         : 'bg-red-100 text-red-600 cursor-not-allowed'
                                     : 'bg-white/80 text-[#4A2F24]/40'

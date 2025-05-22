@@ -17,11 +17,10 @@ export default function ReservationPage() {
                             ].map((item, index) => (
                                 <div key={item.step} className="flex items-center">
                                     <div className="flex flex-col items-center">
-                                        <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold ${
-                                            item.step === 1 
-                                                ? 'bg-[#8B4513] text-white' 
+                                        <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold ${item.step === 1
+                                                ? 'bg-[#8B4513] text-white'
                                                 : 'bg-[#8B4513]/10 text-[#8B4513]'
-                                        }`}>
+                                            }`}>
                                             {item.step}
                                         </div>
                                         <div className="text-sm mt-2 font-medium text-[#2C1810]">{item.name}</div>

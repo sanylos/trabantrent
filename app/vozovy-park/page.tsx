@@ -10,28 +10,37 @@ const cars = [
         name: 'Trabant 601 Universal',
         year: 1975,
         color: 'Slonová kost',
-        description: 'Prostorný kombík v klasické barvě, ideální pro víkendové výlety.',
+        description: 'Prostorný kombík v klasické barvě, ideální pro víkendové výlety. Kompletně zrenovovaný včetně motoru.',
         price: 2999,
-        image: '/cars/trabant-601-universal-1975.jpg',
+        image: 'https://26561f015e.clvaw-cdnwnd.com/c5ff9a37afd02b6934925c8acb12fb2a/200000178-c2a33c2a36/700/001%20023.webp?ph=26561f015e',
     },
     {
-        id: 'trabant-601-s-1982',
-        name: 'Trabant 601 S',
+        id: 'trabant-601-sedan-1982',
+        name: 'Trabant 601 Sedan',
         year: 1982,
-        color: 'Světle modrá',
-        description: 'Sportovní verze s vylepšeným interiérem a chromovanými detaily.',
-        price: 3299,
-        image: '/cars/trabant-601-s-1982.jpg',
+        color: 'Béžová',
+        description: 'Elegantní sedan v původním stavu s kompletní dokumentací. Perfektní pro nostalgické jízdy městem.',
+        price: 2799,
+        image: 'https://26561f015e.clvaw-cdnwnd.com/c5ff9a37afd02b6934925c8acb12fb2a/200000182-7db817db83/700/001%20004.webp?ph=26561f015e',
     },
     {
-        id: 'trabant-601-deluxe-1985',
+        id: 'trabant-601-deluxe-1980',
         name: 'Trabant 601 DeLuxe',
-        year: 1985,
+        year: 1980,
         color: 'Zelená',
-        description: 'Luxusní edice s koženkovým čalouněním a rádiem.',
-        price: 3499,
-        image: '/cars/trabant-601-deluxe-1985.jpg',
+        description: 'Luxusní verze s chromovanými doplňky a koženkovým interiérem. Vhodný pro retro svatby.',
+        price: 3299,
+        image: 'https://26561f015e.clvaw-cdnwnd.com/c5ff9a37afd02b6934925c8acb12fb2a/200000192-033e6033e9/700/001%20036.webp?ph=26561f015e',
     },
+    {
+        id: 'trabant-601-standard-1976',
+        name: 'Trabant 601 Standard',
+        year: 1976,
+        color: 'Modrá',
+        description: 'Klasický model v původním stavu, pravidelně servisovaný. Ideální pro začátečníky.',
+        price: 2599,
+        image: 'https://26561f015e.clvaw-cdnwnd.com/c5ff9a37afd02b6934925c8acb12fb2a/200000170-622176221a/700/001%20015.webp?ph=26561f015e',
+    }
 ];
 
 const colors = Array.from(new Set(cars.map(car => car.color)));
@@ -144,7 +153,8 @@ export default function CataloguePage() {
                                     <Image
                                         src={car.image}
                                         alt={car.name}
-                                        fill
+                                        width={600}
+                                        height={450}
                                         className="object-cover group-hover:scale-105 transition-transform duration-300"
                                     />
                                 </div>
@@ -152,7 +162,7 @@ export default function CataloguePage() {
                                     <div className="flex justify-between items-start mb-2">
                                         <h2 className="text-xl font-bold text-[#2C1810]">{car.name}</h2>
                                         <div className="text-lg font-bold text-[#8B4513]">
-                                            {car.price} Kč
+                                            {car.price} Kč/den
                                         </div>
                                     </div>
                                     <div className="flex gap-2 mb-3">

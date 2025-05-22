@@ -68,7 +68,7 @@ export default function Home() {
                 <div className="w-20 h-20 mb-6 relative">
                   <div className="absolute inset-0 bg-[#8B4513]/10 rounded-2xl rotate-6 group-hover:rotate-12 transition-transform"></div>
                   <div className="absolute inset-0 bg-[#8B4513]/10 rounded-2xl -rotate-6 group-hover:-rotate-12 transition-transform"></div>
-                  <img src="/icons/stats.svg" className="w-full h-full relative z-10 p-2 transition-transform group-hover:scale-110" alt="" />
+                  <img src="/icons/customers.svg" className="w-full h-full relative z-10 p-2 transition-transform group-hover:scale-110" alt="" />
                 </div>
                 <div className="relative">
                   <div className="text-5xl font-bold text-[#2C1810] mb-3 tracking-tight">5000+</div>
@@ -154,7 +154,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-br from-[#8B4513]/5 to-transparent"></div>
                 <div className="w-16 h-16 relative mb-6">
                   <div className="absolute inset-0 bg-[#8B4513]/10 rounded-2xl rotate-6 group-hover:rotate-12 transition-transform"></div>
-                  <img src="/icons/bag.svg" className="w-full h-full relative z-10 p-2 transition-transform group-hover:scale-110" alt="" />
+                  <img src="/icons/all-included.svg" className="w-full h-full relative z-10 p-2 transition-transform group-hover:scale-110" alt="" />
                 </div>
                 <h3 className="text-xl font-semibold text-[#2C1810] mb-3">Vše zahrnuto</h3>
                 <p className="text-[#4A2F24] leading-relaxed">Plná nádrž, pojištění a technická podpora v ceně</p>
