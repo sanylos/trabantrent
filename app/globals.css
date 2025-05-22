@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #FAF3E8;
+  --foreground: #2c3e50;
+  --primary: #8B4513;
+  --primary-dark: #2980b9;
+  --secondary: #ecf0f1;
+  --accent: #e74c3c;
+  --text-light: #7f8c8d;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #2c3e50;
+    --foreground: #ecf0f1;
+    --primary: #3498db;
+    --primary-dark: #2980b9;
+    --secondary: #34495e;
+    --accent: #e74c3c;
+    --text-light: #bdc3c7;
+  }
+}
+
+body {
+  color: var(--primary);
+  background: var(--background);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .section-padding {
+    @apply px-4 py-8 sm:px-6 sm:py-12;
+  }
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-[#8B4513];
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-colors duration-200;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-[#8B4513] text-white rounded-full hover:bg-[#723A0F] transition-colors font-medium;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-white text-[#8B4513] rounded-full hover:bg-[#8B4513]/10 transition-colors font-medium border border-[#8B4513];
+  }
+
+  .card {
+    @apply bg-white dark:bg-secondary rounded-xl shadow-lg p-6;
+  }
+
+  .heading {
+    @apply text-foreground font-bold;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+}
