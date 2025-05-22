@@ -35,6 +35,32 @@ Technické specifikace:
       '/cars/trabant-601-universal-1975/2.jpg',
       '/cars/trabant-601-universal-1975/3.jpg',
       '/cars/trabant-601-universal-1975/4.jpg',
+    ],
+    reviews: [
+      {
+        id: 1,
+        name: 'Martin Svoboda',
+        location: 'Karlovy Vary',
+        date: '15. 4. 2025',
+        rating: 5,
+        text: 'Skvělý stav vozidla, vše fungovalo bez problémů. Jízda byla přesně takový retro zážitek, jaký jsem očekával. Určitě si půjčím znovu!'
+      },
+      {
+        id: 2,
+        name: 'Lucie Malá',
+        location: 'Olomouc',
+        date: '2. 3. 2025',
+        rating: 5,
+        text: 'Perfektní servis a krásně zrenovovaný Trabant. Všichni na silnici se za námi otáčeli. Romantický víkend jak má být!'
+      },
+      {
+        id: 3,
+        name: 'Tomáš Horák',
+        location: 'České Budějovice',
+        date: '28. 2. 2025',
+        rating: 4,
+        text: 'Příjemná nostalgická jízda. Auto bylo čisté a v dobrém stavu. Jen spotřeba oleje byla trochu vyšší, ale to k dvoutaktu patří.'
+      }
     ]
   },
   // ... other cars
@@ -108,7 +134,73 @@ export default function CarDetail({ params }: { params: { id: string } }) {
                   ))}
                 </ul>
               </div>
+
+              <div>
+                <h2 className="text-2xl font-bold text-[#8B4513] mb-4">Recenze</h2>
+                <ul className="space-y-4">
+                  {car.reviews?.map((review) => (
+                    <li key={review.id} className="bg-white rounded-2xl p-6 shadow">
+                      <div className="flex items-center justify-between mb-2">
+                        <div>
+                          <h3 className="text-lg font-bold text-[#8B4513]">{review.name}</h3>
+                          <p className="text-sm text-[#8B4513]/60">{review.location}</p>
+                        </div>
+                        <div className="text-sm text-[#8B4513]/60">{review.date}</div>
+                      </div>
+                      <div className="flex items-center mb-4">
+                        {[...Array(5)].map((_, i) => (
+                          <svg
+                            key={i}
+                            className={`w-5 h-5 ${i < review.rating ? 'text-[#8B4513]' : 'text-[#8B4513]/20'}`}
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                          >
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.18c.969 0 1.371 1.24.588 1.81l-3.388 2.46a1 1 0 00-.364 1.118l1.287 3.966c.3.921-.755 1.688-1.54 1.118l-3.388-2.46a1 1 0 00-1.175 0l-3.388 2.46c-.784.57-1.838-.197-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118L2.98 9.394c-.783-.57-.38-1.81.588-1.81h4.18a1 1 0 00.95-.69l1.286-3.967z" />
+                          </svg>
+                        ))}
+                      </div>
+                      <p className="text-[#8B4513]/80">{review.text}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Reviews */}
+      <section className="py-16">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-[#2C1810] mb-8">Hodnocení zákazníků</h2>
+          <div className="grid grid-cols-1 gap-6">
+            {car.reviews.map((review) => (
+              <div key={review.id} className="bg-white rounded-2xl p-6 shadow-sm">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-full bg-[#8B4513]/10 flex items-center justify-center flex-shrink-0">
+                    <span className="text-lg font-semibold text-[#8B4513]">
+                      {review.name.charAt(0)}
+                    </span>
+                  </div>
+                  <div className="flex-grow">
+                    <div className="flex items-center justify-between mb-2">
+                      <div>
+                        <div className="font-semibold text-[#2C1810]">{review.name}</div>
+                        <div className="text-sm text-[#4A2F24]">{review.location} • {review.date}</div>
+                      </div>
+                      <div className="flex gap-1">
+                        {Array.from({ length: review.rating }).map((_, i) => (
+                          <svg key={i} className="w-5 h-5 text-[#8B4513]" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                          </svg>
+                        ))}
+                      </div>
+                    </div>
+                    <p className="text-[#4A2F24]">{review.text}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

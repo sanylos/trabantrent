@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="cs">
       <body className={`${ubuntu.className} bg-background text-foreground min-h-screen antialiased`}>
         <Navigation />
-        <main>
+        <main className="pt-20">
           {children}
         </main>
       </body>
