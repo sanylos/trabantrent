@@ -9,11 +9,10 @@ const cars = [
         year: 1975,
         color: 'Slonová kost',
         description: 'Prostorný kombík v klasické barvě, ideální pro víkendové výlety.',
-        price: 2999,
-        mainImage: 'https://26561f015e.clvaw-cdnwnd.com/c5ff9a37afd02b6934925c8acb12fb2a/200000178-c2a33c2a36/700/001%20023.webp?ph=26561f015e',
+        price: 2999, mainImage: '/cars/trabant-601-universal-1975.jpg',
         gallery: [
-            'https://26561f015e.clvaw-cdnwnd.com/c5ff9a37afd02b6934925c8acb12fb2a/200000182-7db817db83/700/001%20004.webp?ph=26561f015e',
-            'https://26561f015e.clvaw-cdnwnd.com/c5ff9a37afd02b6934925c8acb12fb2a/200000192-033e6033e9/700/001%20036.webp?ph=26561f015e',
+            '/cars/gallery/trabant-601-universal-1975-1.jpg',
+            '/cars/gallery/trabant-601-universal-1975-2.jpg'
         ],
         longDescription: `
 Trabant 601 Universal z roku 1975 představuje ideální spojení klasického designu a praktičnosti. Tento kombík nabízí dostatek prostoru pro vaše víkendové dobrodružství.

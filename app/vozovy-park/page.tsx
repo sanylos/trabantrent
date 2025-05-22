@@ -11,8 +11,7 @@ const cars = [
         year: 1975,
         color: 'Slonová kost',
         description: 'Prostorný kombík v klasické barvě, ideální pro víkendové výlety. Kompletně zrenovovaný včetně motoru.',
-        price: 2999,
-        image: 'https://26561f015e.clvaw-cdnwnd.com/c5ff9a37afd02b6934925c8acb12fb2a/200000178-c2a33c2a36/700/001%20023.webp?ph=26561f015e',
+        price: 2999,        image: '/cars/trabant-601-universal-1975.jpg',
     },
     {
         id: 'trabant-601-sedan-1982',
@@ -21,7 +20,7 @@ const cars = [
         color: 'Béžová',
         description: 'Elegantní sedan v původním stavu s kompletní dokumentací. Perfektní pro nostalgické jízdy městem.',
         price: 2799,
-        image: 'https://26561f015e.clvaw-cdnwnd.com/c5ff9a37afd02b6934925c8acb12fb2a/200000182-7db817db83/700/001%20004.webp?ph=26561f015e',
+        image: '/cars/trabant-601-sedan-1982.jpg',
     },
     {
         id: 'trabant-601-deluxe-1980',
@@ -30,7 +29,7 @@ const cars = [
         color: 'Zelená',
         description: 'Luxusní verze s chromovanými doplňky a koženkovým interiérem. Vhodný pro retro svatby.',
         price: 3299,
-        image: 'https://26561f015e.clvaw-cdnwnd.com/c5ff9a37afd02b6934925c8acb12fb2a/200000192-033e6033e9/700/001%20036.webp?ph=26561f015e',
+        image: '/cars/trabant-601-deluxe-1980.jpg',
     },
     {
         id: 'trabant-601-standard-1976',
@@ -39,7 +38,7 @@ const cars = [
         color: 'Modrá',
         description: 'Klasický model v původním stavu, pravidelně servisovaný. Ideální pro začátečníky.',
         price: 2599,
-        image: 'https://26561f015e.clvaw-cdnwnd.com/c5ff9a37afd02b6934925c8acb12fb2a/200000170-622176221a/700/001%20015.webp?ph=26561f015e',
+        image: '/cars/trabant-601-standard-1976.jpg',
     }
 ];
 
