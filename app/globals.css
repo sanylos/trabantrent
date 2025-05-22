@@ -3,13 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --background: #FAF3E8;
-  --foreground: #2c3e50;
   --primary: #8B4513;
-  --primary-dark: #2980b9;
-  --secondary: #ecf0f1;
-  --accent: #e74c3c;
-  --text-light: #7f8c8d;
+  --primary-light: #A0522D;
+  --background: #FAF3E8;
+  --text-primary: #2C1810;
+  --text-secondary: #4A2F24;
+  --text-muted: #66463A;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,7 +24,7 @@
 }
 
 body {
-  color: var(--primary);
+  color: var(--text-primary);
   background: var(--background);
 }
 
@@ -45,7 +44,7 @@ html {
 
 @layer base {
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold text-[#8B4513];
+    @apply font-bold text-[#2C1810];
   }
 }
 
@@ -64,6 +63,10 @@ html {
 
   .card {
     @apply bg-white dark:bg-secondary rounded-xl shadow-lg p-6;
+  }
+
+  .feature-card {
+    @apply bg-white rounded-2xl p-6 shadow-sm;
   }
 
   .heading {
